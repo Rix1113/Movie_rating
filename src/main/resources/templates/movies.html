@@ -17,11 +17,11 @@
     <h1> Welcome to RottenPotatoes </h1>
 
     <!-- Add a button -->
-    <a th:href="@{/showFormForAdd}" class="addMovie btn btn-info col-2">Add Movie</a>
+    <a th:href="@{/showFormForAdd}" class="addMovie btn btn-outline-info col-8">Add Movie</a>
 
     <div class="row">
         <div class="col-8">
-            <table class="table table-bordered table-striped">
+            <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
@@ -38,11 +38,11 @@
                     <td>
 
                         <!-- Add update button -->
-                        <a th:href="@{showFormForUpdate(movieId=${movie.id})}" class="btn btn-info btn-sm">Update</a>
+                        <a th:href="@{showFormForUpdate(movieId=${movie.id})}" class="btn btn-outline-secondary btn-sm">Update</a>
 
 
                         <!-- Add delete button -->
-                        <a th:href="@{delete(movieId=${movie.id})}" class="btn btn-danger btn-sm"
+                        <a th:href="@{delete(movieId=${movie.id})}" class="btn btn-outline-danger btn-sm"
                            onclick="if (!(confirm('Are you sure you want to delete this movie?'))) return false">Delete</a>
 
                     </td>
@@ -54,7 +54,7 @@
 
 
         <div class="col-4">
-            <table class="table table-bordered table-striped">
+            <table class="table table-sm">
                 <thead class="thead-dark">
                 <tr>
                     <th>Rated movies</th>

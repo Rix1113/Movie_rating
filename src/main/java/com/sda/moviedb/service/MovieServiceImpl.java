@@ -5,14 +5,12 @@ import com.sda.moviedb.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.util.*;
 
 @Service
 public class MovieServiceImpl implements MovieService{
 
-    private MovieRepository movieRepository;
-    private EntityManager entityManager;
+    private final MovieRepository movieRepository;
     
 
     @Autowired
@@ -54,8 +52,7 @@ public class MovieServiceImpl implements MovieService{
     public List<String> ratedMovie() {
         List<Movie> allMovies = findAll();
         ArrayList<String> ratedMovieList = new ArrayList<>();
-        for (int i = 0; i < allMovies.size(); i++) {
-            Movie ratedMovie = allMovies.get(i);
+        for (Movie ratedMovie : allMovies) {
             if (ratedMovie.getRating() > 0) {
                 ratedMovieList.add(ratedMovie.getName());
             }
