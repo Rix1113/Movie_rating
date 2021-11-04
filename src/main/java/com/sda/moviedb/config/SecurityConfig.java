@@ -24,16 +24,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser(users.username("Admin").password("123").roles("ADMIN"));
 
          }
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/authenticateTheUser")
-                .defaultSuccessUrl("/movies", true)
-                .permitAll();
-    }
 }
